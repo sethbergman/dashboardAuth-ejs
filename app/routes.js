@@ -109,7 +109,7 @@ module.exports = function(app, passport) {
         // send to facebook to do the authentication
         //app.get('/auth/facebook', passport.authenticate('facebook', { scope : 'email' }));
 
-        app.get('/auth/twitter', passport.authenticate('twitter', { scope : 'email' }));
+        app.get('/auth/facebook', passport.authenticate('facebook', { scope : 'email' }));
 
         // handle the callback after facebook has authenticated the user
         app.get('/auth/facebook/callback',
