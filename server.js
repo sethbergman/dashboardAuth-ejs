@@ -10,9 +10,9 @@ var cookieParser = require('cookie-parser');
 var bodyParser   = require('body-parser');
 var session      = require('express-session');
 
-var configDB = require(process.env.MONGO_URL);
+//var configDB = require(process.env.MONGO_URL);
 
-mongoose.connect(configDB.url); // connect to our database
+mongoose.connect(process.env.MONGO_URL); // connect to our database
 
 require('./config/passport')(passport); // pass passport for configuration
 
