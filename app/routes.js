@@ -107,7 +107,7 @@ module.exports = function(app, passport) {
     // facebook -------------------------------
 
         // send to facebook to do the authentication
-        
+
         //app.get('/auth/facebook', passport.authenticate('facebook', { scope : 'email' }));
         app.get('/auth/facebook', function(req, res) {
             res.send('Facebook requires https for authentication, so I removed this route. Sorry!')
@@ -209,7 +209,7 @@ module.exports = function(app, passport) {
         user.local.email    = undefined;
         user.local.password = undefined;
         user.save(function(err) {
-            res.redirect('/profile');
+            res.redirect('/user');
         });
     });
 
@@ -218,7 +218,7 @@ module.exports = function(app, passport) {
         var user            = req.user;
         user.facebook.token = undefined;
         user.save(function(err) {
-            res.redirect('/profile');
+            res.redirect('/user');
         });
     });
 
@@ -227,7 +227,7 @@ module.exports = function(app, passport) {
         var user           = req.user;
         user.twitter.token = undefined;
         user.save(function(err) {
-            res.redirect('/profile');
+            res.redirect('/user');
         });
     });
 
@@ -236,7 +236,7 @@ module.exports = function(app, passport) {
         var user          = req.user;
         user.google.token = undefined;
         user.save(function(err) {
-            res.redirect('/profile');
+            res.redirect('/user');
         });
     });
 
