@@ -114,7 +114,7 @@ module.exports = function(passport) {
                 User.findOne({ 'local.email' :  email }, function(err, user) {
                     if (err)
                         return done(err);
-                    
+
                     if (user) {
                         return done(null, false, req.flash('loginMessage', 'That email is already taken.'));
                         // Using 'loginMessage instead of signupMessage because it's used by /connect/local'
@@ -125,14 +125,15 @@ module.exports = function(passport) {
                         user.save(function (err) {
                             if (err)
                                 return done(err);
-                            
+
                             return done(null,user);
                         });
                     }
                 });
             } else {
                 // user is logged in and already has a local account. Ignore signup. (You should log out before trying to create a new account, user!)
-                return done(null, req.user);
+                //return done(null, req.user);
+                return done(null, req.user, req.flash('loginMessage', 'You are successfully registered and logged in ' + user.username + '!'));
             }
 
         });
@@ -174,7 +175,7 @@ module.exports = function(passport) {
                             user.save(function(err) {
                                 if (err)
                                     return done(err);
-                                    
+
                                 return done(null, user);
                             });
                         }
@@ -192,7 +193,7 @@ module.exports = function(passport) {
                         newUser.save(function(err) {
                             if (err)
                                 return done(err);
-                                
+
                             return done(null, newUser);
                         });
                     }
@@ -210,7 +211,7 @@ module.exports = function(passport) {
                 user.save(function(err) {
                     if (err)
                         return done(err);
-                        
+
                     return done(null, user);
                 });
 
@@ -252,7 +253,7 @@ module.exports = function(passport) {
                             user.save(function(err) {
                                 if (err)
                                     return done(err);
-                                    
+
                                 return done(null, user);
                             });
                         }
@@ -270,7 +271,7 @@ module.exports = function(passport) {
                         newUser.save(function(err) {
                             if (err)
                                 return done(err);
-                                
+
                             return done(null, newUser);
                         });
                     }
@@ -288,7 +289,7 @@ module.exports = function(passport) {
                 user.save(function(err) {
                     if (err)
                         return done(err);
-                        
+
                     return done(null, user);
                 });
             }
@@ -331,7 +332,7 @@ module.exports = function(passport) {
                             user.save(function(err) {
                                 if (err)
                                     return done(err);
-                                    
+
                                 return done(null, user);
                             });
                         }
@@ -348,7 +349,7 @@ module.exports = function(passport) {
                         newUser.save(function(err) {
                             if (err)
                                 return done(err);
-                                
+
                             return done(null, newUser);
                         });
                     }
@@ -366,7 +367,7 @@ module.exports = function(passport) {
                 user.save(function(err) {
                     if (err)
                         return done(err);
-                        
+
                     return done(null, user);
                 });
 

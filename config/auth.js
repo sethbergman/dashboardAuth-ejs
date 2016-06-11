@@ -1,21 +1,21 @@
 module.exports = {
 
     'facebookAuth' : {
-        'clientID'        : '1634179146904876',
-        'clientSecret'    : '8f85b4de1606d032f48f6bba7766baf2',
-        'callbackURL'     : 'http://dash3.stackriot.com/auth/facebook/callback'
+        'clientID'        : '1721239734790857',
+        'clientSecret'    : '4e382ab8f2176c0418de8a7c7681bb60',
+        'callbackURL'     : 'http://dashboard-ejs.stackriot.com/auth/facebook/callback'
     },
 
     'twitterAuth' : {
-        'consumerKey'        : 'GeSP7s3Y4LbEKN1y4LqTgybF1',
-        'consumerSecret'     : 'hkXTVgvbqfZ9HKRvOo6fHLcnaVnLVqUYb5lHTrCRHxeDZOxgQD',
-        'callbackURL'        : 'http://dash3.stackriot.com/auth/twitter/callback'
+        'consumerKey'        : '4A04gIbsT2PmPZ248l3enVDdH',
+        'consumerSecret'     : 'KrqDIIpTLuxUqqdGAfoXPZETHG4IM7ctk2BKQNeqlSA3iXCXfB',
+        'callbackURL'        : 'http://dashboard-ejs.stackriot.com/auth/twitter/callback'
     },
 
     'googleAuth' : {
-        'clientID'         : '704451403113-2e25k3vqmtpipf7lhn0jkhanapie0u76.apps.googleusercontent.com',
-        'clientSecret'     : 'dmD1_MqoJRUB2F9O2vwSVpf_',
-        'callbackURL'      : 'http://dash3.stackriot.com/auth/google/callback'
+        'clientID'         : '814038177529-d9460ecipv6aac9ff6mb66abh0ugsr32.apps.googleusercontent.com',
+        'clientSecret'     : '1wEylmDeCYbATFF9BTtDnXVX',
+        'callbackURL'      : 'http://dashboard-ejs.stackriot.com/auth/google/callback'
     }
 
 };

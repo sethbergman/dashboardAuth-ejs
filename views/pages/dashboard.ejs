@@ -147,11 +147,6 @@
 
         </nav>
 
-        <% if (message) { %>
-		  <p class="alert alert-warning"><%= message %></p>
-		<% } else { %>
-        <% } %>
-
 
         <% if (message.length > 0) { %>
             <div class="alert alert-success"><%= message %></div>
@@ -161,7 +156,7 @@
 
 
         <% if (message.length > 0) { %>
-            <div class="alert alert-danger"><%= message %></div>
+            <div class="alert alert-warning"><%= message %></div>
         <% } else { %>
         <% } %>
 
