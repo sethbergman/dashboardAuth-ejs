@@ -139,16 +139,16 @@
 		                  <p class="navbar-text">
 		                    <strong>Hi,</strong>
 		                    <img src="assets/img/default-avatar.png" width="20" height="20">
-                            <%= user.local.email %>
+                            <%- user.twitter.displayName %>
                             <% } else { %>
-                            <%= user._id %>
+                            <%- user.local.email %>
+                            <%- user.google.displayName %>
                             <% } %>
-
 		                  </p>
                         <li>
                             <% if (user) { %>
-                           <a href="">
-                               Account
+                           <a href="/user">
+                               Profile
                             </a>
                         </li>
                         <li class="dropdown">
