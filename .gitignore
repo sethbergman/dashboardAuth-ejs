@@ -1,4 +1,3 @@
 *.log
 node_modules
-config/auth.js
-config/database.js
+assets/bower_components
