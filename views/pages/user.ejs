@@ -132,14 +132,21 @@
                         </li>
                     </ul>
 
-                    <ul class="nav navbar-nav navbar-right">
-                        <% if (user) { %>
-                        <p class="navbar-text">
-                           <strong>Hi,</strong>
-                           <img src="assets/img/default-avatar.png" width="20" height="20">
-                           <%= user._id %>
-                        </p>
+					<ul class="nav navbar-nav navbar-right">
+						<% if (user) { %>
+
+
+		                  <p class="navbar-text">
+		                    <strong>Hi,</strong>
+		                    <img src="assets/img/default-avatar.png" width="20" height="20">
+                            <%= user.local.email %>
+                            <% } else { %>
+                            <%= user._id %>
+                            <% } %>
+
+		                  </p>
                         <li>
+                            <% if (user) { %>
                            <a href="">
                                Account
                             </a>
@@ -369,7 +376,7 @@
                             <div class="content">
                                 <div class="author">
                                      <a href="#">
-                                    <img class="avatar border-gray" src="assets/img/faces/face-3.jpg" alt="..."/>
+                                    <img class="avatar border-gray" src="assets/img/faces/face-2.jpg" alt="..."/>
 
                                       <h4 class="title">Cardboard Folderson<br />
                                          <small>cardboard_folderson231</small>

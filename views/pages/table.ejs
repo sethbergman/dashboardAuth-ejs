@@ -132,8 +132,21 @@
                         </li>
                     </ul>
 
-                    <ul class="nav navbar-nav navbar-right">
+					<ul class="nav navbar-nav navbar-right">
+						<% if (user) { %>
+
+
+		                  <p class="navbar-text">
+		                    <strong>Hi,</strong>
+		                    <img src="assets/img/default-avatar.png" width="20" height="20">
+                            <%= user.local.email %>
+                            <% } else { %>
+                            <%= user._id %>
+                            <% } %>
+
+		                  </p>
                         <li>
+                            <% if (user) { %>
                            <a href="">
                                Account
                             </a>
@@ -153,11 +166,14 @@
                                 <li><a href="#">Separated link</a></li>
                               </ul>
                         </li>
-                        <li>
-                            <a href="#">
-                                Log out
-                            </a>
-                        </li>
+						<li>
+						  <a href="/logout">Log out</a>
+						</li>
+						<% } else { %>
+						 <li>
+						  <a href="/login">Log in</a>
+						  </li>
+						<% } %>
                     </ul>
                 </div>
             </div>

@@ -105,13 +105,19 @@
 
                     <ul class="nav navbar-nav navbar-right">
 						<% if (user) { %>
+
+
 		                  <p class="navbar-text">
 		                    <strong>Hi,</strong>
 		                    <img src="assets/img/default-avatar.png" width="20" height="20">
-		                    <%= user._id %>
+                            <%= user.local.email %>
+                            <% } else { %>
+                            <%= user._id %>
+                            <% } %>
 
 		                  </p>
                         <li>
+                            <% if (user) { %>
                            <a href="">
                                Account
                             </a>
@@ -516,6 +522,11 @@
 
 <!-- Light Bootstrap Table DEMO methods, don't include it in your project! -->
 <script src="assets/js/demo.js"></script>
+
+<script src="http://twitter.github.com/hogan.js/builds/3.0.1/hogan-3.0.1.js"></script>
+
+<script src="assets/js/nunjucks.min.js"></script>
+
 
 <!--  Google Maps Plugin    -->
 <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?sensor=false"></script>
