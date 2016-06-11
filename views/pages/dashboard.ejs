@@ -389,23 +389,23 @@
                             </div>
                         </div>
 
-                        <!-- FACEBOOK INFORMATION -->
+                        <!-- GITHUB INFORMATION -->
                         <div class="col-sm-12">
                             <div class="well">
-                                <h3 class="text-primary"><span class="fa fa-facebook"></span> Facebook</h3>
+                                <h3 class="text-primary"><span class="fa fa-github"></span> Github</h3>
 
                                 <!-- check if the user has this token (is the user authenticated with this social account) -->
-                                <% if (user.facebook.token) { %>
+                                <% if (user.github.token) { %>
                                     <p>
-                                        <strong>id</strong>: <%= user.facebook.id %><br>
-                                        <strong>token</strong>: <%= user.facebook.token %><br>
-                                        <strong>email</strong>: <%= user.facebook.email %><br>
-                                        <strong>name</strong>: <%= user.facebook.name %><br>
+                                        <strong>id</strong>: <%= user.github.id %><br>
+                                        <strong>token</strong>: <%= user.github.token %><br>
+                                        <strong>email</strong>: <%= user.github.email %><br>
+                                        <strong>name</strong>: <%= user.github.name %><br>
                                     </p>
 
-                                    <a href="/unlink/facebook" class="btn btn-primary">Unlink</a>
+                                    <a href="/unlink/github" class="btn btn-social-icon">Unlink</a>
                                 <% } else { %>
-                                    <a href="#" class="btn btn-primary">Connect Facebook</a>
+                                    <a href="/connect/github" class="btn btn-social-icon">Connect Github</a>
                                 <% } %>
 
                             </div>

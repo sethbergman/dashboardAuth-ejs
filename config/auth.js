@@ -6,6 +6,12 @@ module.exports = {
         'callbackURL'     : 'http://dashboard-ejs.stackriot.com/auth/facebook/callback'
     },
 
+    'githubAuth' : {
+        'clientID'        : 'd511dcdcb8e6f14946e1',
+        'clientSecret'    : '253fcb69955ceb42ad50a47ecc120e3a9f08941a',
+        'callbackURL'     : 'http://dashboard-ejs.stackriot.com/auth/github/callback'
+    },
+
     'twitterAuth' : {
         'consumerKey'        : '4A04gIbsT2PmPZ248l3enVDdH',
         'consumerSecret'     : 'KrqDIIpTLuxUqqdGAfoXPZETHG4IM7ctk2BKQNeqlSA3iXCXfB',

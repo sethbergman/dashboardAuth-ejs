@@ -4,6 +4,7 @@ var port     = process.env.PORT || 5000;
 var mongoose = require('mongoose');
 var passport = require('passport');
 var flash    = require('connect-flash');
+
 var morgan       = require('morgan');
 var cookieParser = require('cookie-parser');
 var bodyParser   = require('body-parser');
@@ -30,25 +31,9 @@ app.use(passport.session()); // persistent login sessions
 app.use(flash()); // use connect-flash for flash messages stored in session
 
 // Session-persisted message middleware
-app.use(function(req, res, next){
-  var err = req.session.error,
-      msg = req.session.notice,
-      success = req.session.success;
 
-  delete req.session.error;
-  delete req.session.success;
-  delete req.session.notice;
 
-  if (err) res.locals.error = err;
-  if (msg) res.locals.notice = msg;
-  if (success) res.locals.success = success;
 
-  next();
-});
-
-var user = {
-  "avatar": "assets/img/default-avatar.png"
-}
 
 // routes ======================================================================
 require('./app/routes.js')(app, passport); // load routes and pass in our app

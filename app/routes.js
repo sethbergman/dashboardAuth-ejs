@@ -145,6 +145,17 @@ module.exports = function(app, passport) {
                 failureRedirect : '/'
             }));
 
+    // github -----------------------------------
+
+        app.get('/auth/github',
+            passport.authenticate('github'));
+
+        app.get('/auth/github/callback',
+            passport.authenticate('github', {
+                successRedirect : '/dashboard',
+                failureRedirect : '/'
+            }));
+
 // =============================================================================
 // AUTHORIZE (ALREADY LOGGED IN / CONNECTING OTHER SOCIAL ACCOUNT) =============
 // =============================================================================
@@ -162,11 +173,11 @@ module.exports = function(app, passport) {
     // facebook -------------------------------
 
         // send to facebook to do the authentication
-        app.get('/connect/facebook', passport.authorize('facebook', { scope : 'email' }));
+        app.get('/connect/github', passport.authenticate('github', { scope : 'email' }));
 
         // handle the callback after facebook has authorized the user
-        app.get('/connect/facebook/callback',
-            passport.authorize('facebook', {
+        app.get('/connect/github/callback',
+            passport.authenticate('github', {
                 successRedirect : '/dashboard',
                 failureRedirect : '/'
             }));
@@ -174,11 +185,11 @@ module.exports = function(app, passport) {
     // twitter --------------------------------
 
         // send to twitter to do the authentication
-        app.get('/connect/twitter', passport.authorize('twitter', { scope : 'email' }));
+        app.get('/connect/twitter', passport.authenticate('twitter', { scope : 'email' }));
 
         // handle the callback after twitter has authorized the user
         app.get('/connect/twitter/callback',
-            passport.authorize('twitter', {
+            passport.authenticate('twitter', {
                 successRedirect : '/dashboard',
                 failureRedirect : '/'
             }));
@@ -187,11 +198,11 @@ module.exports = function(app, passport) {
     // google ---------------------------------
 
         // send to google to do the authentication
-        app.get('/connect/google', passport.authorize('google', { scope : 'email' }));
+        app.get('/connect/google', passport.authenticate('google', { scope : 'email' }));
 
         // the callback after google has authorized the user
         app.get('/connect/google/callback',
-            passport.authorize('google', {
+            passport.authenticate('google', {
                 successRedirect : '/dashboard',
                 failureRedirect : '/'
             }));
@@ -214,9 +225,9 @@ module.exports = function(app, passport) {
     });
 
     // facebook -------------------------------
-    app.get('/unlink/facebook', isLoggedIn, function(req, res) {
+    app.get('/unlink/github', isLoggedIn, function(req, res) {
         var user            = req.user;
-        user.facebook.token = undefined;
+        user.github.token = undefined;
         user.save(function(err) {
             res.redirect('/user');
         });
