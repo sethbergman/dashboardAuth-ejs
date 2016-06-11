@@ -113,8 +113,10 @@
                             <%= user.local.email %>
                             <% } else { %>
                             <%= user._id %>
+                            <% } %>
                             <% if (user.twitter.token) { %>
                             <%= user.twitter.displayName %>
+                            <% } else { %>
                             <% } %>
 
 		                  </p>
