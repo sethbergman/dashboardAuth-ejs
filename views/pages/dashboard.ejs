@@ -104,11 +104,11 @@
                     </ul>
 
                     <ul class="nav navbar-nav navbar-right">
-						<% if (user.email) { %>
+						<% if (user.username) { %>
 		                  <p class="navbar-text">
 		                    <strong>Hi,</strong>
 		                    <img src="assets/img/default-avatar.png" width="20" height="20">
-		                    <%= user.email %>
+		                    <%= user._id %>
 
 		                  </p>
                         <li>
