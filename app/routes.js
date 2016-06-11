@@ -134,7 +134,7 @@ module.exports = function(app, passport) {
     // google ---------------------------------
 
         // send to google to do the authentication
-        app.get('/auth/google', passport.authenticate('google', { scope : ['profile', 'email'] }));
+        app.get('/auth/google', passport.authenticate('google', { scope : 'email' }));
 
         // the callback after google has authenticated the user
         app.get('/auth/google/callback',
@@ -185,7 +185,7 @@ module.exports = function(app, passport) {
     // google ---------------------------------
 
         // send to google to do the authentication
-        app.get('/connect/google', passport.authorize('google', { scope : ['profile', 'email'] }));
+        app.get('/connect/google', passport.authorize('google', { scope : 'email' }));
 
         // the callback after google has authorized the user
         app.get('/connect/google/callback',
