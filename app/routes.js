@@ -107,9 +107,11 @@ module.exports = function(app, passport) {
     // facebook -------------------------------
 
         // send to facebook to do the authentication
+        
         //app.get('/auth/facebook', passport.authenticate('facebook', { scope : 'email' }));
-
-        app.get('/auth/facebook', passport.authenticate('facebook', { scope : 'email' }));
+        app.get('/auth/facebook', function(req, res) {
+            res.send('Facebook requires https for authentication, so I removed this route. Sorry!')
+        });
 
         // handle the callback after facebook has authenticated the user
         app.get('/auth/facebook/callback',
