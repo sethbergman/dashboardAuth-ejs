@@ -110,14 +110,14 @@
 		                  <p class="navbar-text">
 		                    <strong>Hi,</strong>
 		                    <img src="assets/img/default-avatar.png" width="20" height="20">
-                            <%= user.local.email %>
+                            <%- user.local.email %>
+                            <%- user.twitter.displayName %>
+                            <%- user.github.email %>
+                            <%- user.google.name %>
                             <% } else { %>
                             <%= user._id %>
                             <% } %>
-                            <% if (user.twitter.token) { %>
-                            <%= user.twitter.displayName %>
-                            <% } else { %>
-                            <% } %>
+
 
 		                  </p>
                         <li>
