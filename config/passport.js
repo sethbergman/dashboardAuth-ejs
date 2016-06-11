@@ -144,7 +144,7 @@ module.exports = function(passport) {
     passport.use(new GitHubStrategy({
         clientID: 'd511dcdcb8e6f14946e1',
         clientSecret: '253fcb69955ceb42ad50a47ecc120e3a9f08941a',
-        callbackURL: "http://0.0.0.0:5000/auth/github/callback"
+        callbackURL: "http://dashboard-ejs.stackriot.com/auth/github/callback"
       },
       function(req, accessToken, refreshToken, profile, done) {
         User.findOne({ 'githubId' : profile.id }, function (err, user) {
