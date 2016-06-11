@@ -111,11 +111,20 @@
 		                    <strong>Hi,</strong>
 		                    <img src="assets/img/default-avatar.png" width="20" height="20">
                             <%- user.local.email %>
+                            <% } else { %>
+                            <% } %>
+                            <% if (user.twitter.token) { %>
                             <%- user.twitter.displayName %>
+                            <% } else { %>
+                            <% } %>
+                            <% if (user.github.token) { %>
                             <%- user.github.email %>
+                            <% } else { %>
+                            <% } %>
+                            <% if (user.google.token) { %>
                             <%- user.google.name %>
                             <% } else { %>
-                            <%= user._id %>
+                            
                             <% } %>
 
 
