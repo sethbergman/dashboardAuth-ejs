@@ -147,7 +147,7 @@ module.exports = function(passport) {
         callbackURL: "http://dashboard-ejs.stackriot.com/auth/github/callback"
       },
       function(req, accessToken, refreshToken, profile, done) {
-        User.findOne({ 'githubId' : profile.id }, function (err, user) {
+        User.findOne({ 'github.id' : profile.id }, function (err, user) {
           return done(err, user);
         });
       }
@@ -182,7 +182,7 @@ module.exports = function(passport) {
                         // if there is a user id already but no token (user was linked at one point and then removed)
                         if (!user.github.token) {
                             user.github.token = token;
-                            user.github.name  = profile.name.givenName + ' ' + profile.name.familyName;
+                            user.github.name  = profile.name;
                             user.github.email = (profile.emails[0].value || '').toLowerCase();
 
                             user.save(function(err) {
@@ -218,7 +218,7 @@ module.exports = function(passport) {
 
                 user.github.id    = profile.id;
                 user.github.token = token;
-                user.github.name  = profile.name.givenName + ' ' + profile.name.familyName;
+                user.github.name  = profile.name;
                 user.github.email = (profile.emails[0].value || '').toLowerCase();
 
                 user.save(function(err) {
