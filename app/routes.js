@@ -65,9 +65,12 @@ module.exports = function(app, passport) {
     });
 
     // LOGOUT ==============================
-    app.get('/logout', function(req, res) {
-        req.logout();
-        res.redirect('/');
+    app.get('/logout', function(req, res){
+      var name = req.user.username;
+      console.log("LOGGIN OUT " + req.user.username)
+      req.logout();
+      res.redirect('/');
+      req.session.notice = "You have successfully been logged out " + name + "!";
     });
 
 // =============================================================================
@@ -106,9 +109,7 @@ module.exports = function(app, passport) {
         // send to facebook to do the authentication
         //app.get('/auth/facebook', passport.authenticate('facebook', { scope : 'email' }));
 
-        app.get('/auth/facebook', function(req, res) {
-            res.send('Facebook requires https for authentication, so I removed this route. Sorry!')
-        });
+        app.get('/auth/twitter', passport.authenticate('twitter', { scope : 'email' }));
 
         // handle the callback after facebook has authenticated the user
         app.get('/auth/facebook/callback',
