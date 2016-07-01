@@ -13,7 +13,7 @@
     "express-session": "~1.0.0",
     "hogan.js": "^3.0.2",
     "method-override": "~1.0.0",
-    "mongoose": "4.2.4",
+    "mongoose": "4.3.6",
     "morgan": "~1.0.0",
     "nunjucks": "^2.4.2",
     "passport": "~0.1.17",
