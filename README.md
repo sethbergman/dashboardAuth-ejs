@@ -1,5 +1,7 @@
 # dashboardAuth-ejs
 ---------------------------------------------
+
+[![Greenkeeper badge](https://badges.greenkeeper.io/sethbergman/dashboardAuth-ejs.svg)](https://greenkeeper.io/)
 [ ![Codeship Status for sethbergman/dashboardAuth-ejs](https://codeship.com/projects/75739d30-1575-0134-674c-2e1718fe265e/status?branch=master)](https://codeship.com/projects/158101)
 
 Clone
